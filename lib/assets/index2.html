@@ -15,8 +15,8 @@
       }
 
       .loader {
-        border: 10px solid #f3f3f3; /* Light grey */
-        border-top: 10px solid #000000; /* Blue */
+        border: 1px solid #f3f3f3; /* Light grey */
+        border-top: 1px solid #000000; /* Black */
         border-radius: 50%;
         width: 120px;
         height: 120px;
@@ -50,27 +50,27 @@
     <div class="loader box-content"></div>
 </center>
 <script>
-      var $zoho = $zoho || {};
-      $zoho.salesiq = $zoho.salesiq || {
-        widgetcode:
-          "",
-        values: {},
-        ready: function () {},
-      };
-      var d = document;
-      s = d.createElement("script");
-      s.type = "text/javascript";
-      s.id = "zsiqscript";
-      s.defer = true;
-      s.src = "https://salesiq.zoho.com/widget";
-      var t = d.getElementsByTagName("script")[0];
-      t.parentNode.insertBefore(s, t);
-      d.write("<div id='zsiqwidget'></div>");
+var $zoho = $zoho || {};
+$zoho.salesiq = $zoho.salesiq || {
+  widgetcode:
+    "",
+  values: {},
+  ready: function () {},
+};
+var d = document;
+s = d.createElement("script");
+s.type = "text/javascript";
+s.id = "zsiqscript";
+s.defer = true;
+s.src = "https://salesiq.zoho.com/widget";
+var t = d.getElementsByTagName("script")[0];
+t.parentNode.insertBefore(s, t);
+d.write("<div id='zsiqwidget'></div>");
 
-      $zoho.salesiq.afterReady = function (visitorgeoinfo) {
-        $zoho.salesiq.floatwindow.visible("1");
-        //document.querySelector("#zsiqwidget").style.marginTop = "-6rem";
-      };
+$zoho.salesiq.afterReady = function (visitorgeoinfo) {
+  $zoho.salesiq.floatwindow.visible("1");
+};
+
 </script>
 </body>
 </html>

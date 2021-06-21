@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
+final InAppLocalhostServer localhostServer =
+new InAppLocalhostServer(port: 2021);
+
 class ZohoChat extends StatefulWidget {
 
   ///the generated widget code copied from the zoho chat script.
@@ -50,9 +53,6 @@ class _ZohoChatState extends State<ZohoChat> {
       this.loaderSize,
       this.showMinimizeChatWidget});
 
-  final InAppLocalhostServer localhostServer =
-  new InAppLocalhostServer(port: 2021);
-
   final GlobalKey webViewKey = GlobalKey();
 
   InAppWebViewController? webViewController;
@@ -60,11 +60,11 @@ class _ZohoChatState extends State<ZohoChat> {
   InAppWebViewGroupOptions options = InAppWebViewGroupOptions(
       crossPlatform: InAppWebViewOptions(
           javaScriptEnabled: true,
-          clearCache: true,
-          preferredContentMode: UserPreferredContentMode.MOBILE,
-          mediaPlaybackRequiresUserGesture: true,
+          //clearCache: true,
+          //preferredContentMode: UserPreferredContentMode.MOBILE,
+          //mediaPlaybackRequiresUserGesture: true,
       ),
-      ios: IOSInAppWebViewOptions());
+  );
 
   bool showErrorPage = false;
   String errorMessage = '';
@@ -145,11 +145,11 @@ var \$zoho = \$zoho || {};
                     key: webViewKey,
                     initialOptions: options,
                     initialUrlRequest: URLRequest(
-                        url: Platform.isAndroid
+                        url: Platform.isIOS
                             ? Uri.parse(
-                                "http://localhost:2021/packages/zoho_chat/assets/index.html")
+                                "http://localhost:2021/packages/zoho_chat/assets/index2.html")
                             : Uri.parse(
-                                "http://localhost:2021/packages/zoho_chat/assets/index2.html")),
+                                "http://localhost:2021/packages/zoho_chat/assets/index.html")),
                     initialUserScripts: UnmodifiableListView<UserScript>([
                       UserScript(
                           source: functionBody,
@@ -166,7 +166,7 @@ var \$zoho = \$zoho || {};
                       showError(message);
                     },
                     onConsoleMessage: (controller, message) {
-                      //print("console message: $message");
+                      print("console message: $message");
                     },
                   ),
                 )

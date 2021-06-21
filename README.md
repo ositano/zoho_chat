@@ -2,6 +2,12 @@
 
 A flutter implementation of Zoho SaleIQ Live Chat Implementation. You need zoho salesiq widget code to use this plugin
 
+
+Screenshots
+![Screenshot_1624118447](https://user-images.githubusercontent.com/50879868/122739499-f4cf4700-d27a-11eb-8e12-1821dcf5bad3.png)
+![Screenshot_1624118459](https://user-images.githubusercontent.com/50879868/122739515-f862ce00-d27a-11eb-869f-4ddfa3896e02.png)
+
+
 ## Getting Started
 copy the widget code (a bunch of hexa decimal value) from the generated code gotten from zoho salesiq dashboard
 
